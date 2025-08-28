@@ -1,0 +1,120 @@
+1. Grade Checker 
+Take a score as input and print the grade based on the following: 
+90+ : "A" 
+80-89 : "B" 
+70-79 : "C" 
+60-69 : "D" 
+Below 60 : "F" 
+here we used a basic if else statement to carry out marks and all.
+
+
+Answer - 
+
+score = int(input("Enter your score: ")) 
+
+if score >= 90: 
+  print("Grade: A") 
+elif score >= 80: 
+  print("Grade: B") 
+elif score >= 70: 
+  print("Grade: C") 
+elif score >= 60: 
+  print("Grade: D") 
+else: 
+  print("Grade: F")
+
+-----------------------------------
+
+2 Student Grades 
+Create a dictionary where the keys are student names and the values are their grades. 
+Allow the user to: Add a new student and grade. 
+
+Update an existing student’s grade. 
+Print all student grades. 
+
+Used dictionary and basic operations. Using if else:
+
+Answer -
+
+student_grades = {} 
+
+while True: 
+  print("\nOptions:") 
+  print("1. Add new student and grade") 
+  print("2. Update existing student's grade") 
+  print("3. Print all student grades") 
+  print("4. Exit") 
+
+  choice = input("Enter your choice (1-4): ") 
+  
+  if choice == '1': 
+    name = input("Enter student name: ") 
+    if name in student_grades: 
+      print("Student already exists. Use update option.") 
+    else: 
+      grade = input("Enter grade: ") 
+      student_grades[name] = grade 
+      print("Student added.") 
+
+  elif choice == '2': 
+    name = input("Enter student name to update: ") 
+    if name in student_grades: 
+      grade = input("Enter new grade: ") 
+      student_grades[name] = grade 
+      print("Grade updated.") 
+    else: 
+      print("Student not found.") 
+
+  elif choice == '3': 
+    print("\nStudent Grades:") 
+    for name, grade in student_grades.items(): 
+      print(f"{name}: {grade}") 
+
+  elif choice == '4': 
+    print("Exiting...") 
+    break 
+
+  else: 
+    print("Invalid choice. Please try again.")
+
+
+-----------------------------------
+
+3.Write to a File 
+Write a program to create a text file and write some content to it. 
+Using file functions like write and open. 
+
+Answer- 
+
+file_name = "hello.txt" 
+with open(file_name, 'w') as file: 
+  file.write("Hello! This is a sample file.\n") 
+  file.write("Writing data to a file in Python is easy!\n") 
+print(f"Content written to {file_name}")
+
+
+-----------------------------------
+
+
+4. Read from a File 
+We used open in read mode and file.read to read and print to display. 
+
+Answer- 
+
+file_name = "sample.txt" 
+
+try: 
+  with open(file_name, 'r') as file: 
+    content = file.read() 
+    print("File content:\n") 
+    print(content) 
+except FileNotFoundError: 
+  print(f"The file {file_name} does not exist.")
+
+
+
+
+
+
+
+
